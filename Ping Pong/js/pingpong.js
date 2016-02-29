@@ -34,30 +34,30 @@ function gameloop() {
 }
 
 function moveBall() {
-  var ballTop = parseInt($("#ball").css("top"));
+	var ballTop = parseInt($("#ball").css("top"));
   var ballLeft = parseInt($("#ball").css("left"));
   var playgroundHeight = parseInt($("#playground").height());
   var playgroundWidth = parseInt($("#playground").width());
   var ball = pingpong.ball;
 
   // check bottom
-  if (ballTop+ball.speed*ball.directionY > playgroundHeight) {
+  if (ballTop + ball.speed * ball.directionY > playgroundHeight) {
     ball.directionY = -1;
-  }
+	}
   // check top
-  if (ballTop+ball.speed*ball.directionY < 0) {
+  if (ballTop + ball.speed * ball.directionY < 0) {
     ball.directionY = 1;
   }
   // check right
-  if (ballLeft+ball.speed*ball.directionX > playgroundWidth) {
+  if (ballLeft + ball.speed * ball.directionX > playgroundWidth) {
     // player B lost
     pingpong.scoreA++;
-    $("#scoreA").html(pingpong.scoreA);
+    $('#scoreA').html(pingpong.scoreA);
 
     // reset the ball
-    $("#ball").css({
-      "left":"250px",
-      "top" :"100px"
+    $('#ball').css({
+      'left':'250px',
+      'top':'100px'
     });
 
     // update the ball location variables
